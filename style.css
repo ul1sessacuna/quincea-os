@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #c4c4c4;
+    color: #5a2a67;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ff99cc;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 250px;
+    animation: fadeInZoom 1.5s ease-in-out;
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-section {
+    margin: 20px 0;
+    text-align: center;
+}
+.image-section img {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.5s;
+}
+.image-section img:hover {
+    transform: scale(1.05);
+}
+.info, .countdown {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.info h2, .countdown h2 {
+    color: #7d3c98;
+}
+.info p, .countdown-timer {
+    font-size: 18px;
+}
+.countdown-timer {
+    display: flex;
+    justify-content: space-around;
+}
+.countdown-item {
+    text-align: center;
+}
+.countdown-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d291bc;
+}
+.footer {
+    background-color: #d291bc;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}
+@media (max-width: 600px) {
+    .countdown-timer {
+        flex-direction: column;
+    }
+    .image-section img {
+        width: 95%;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .logo img {
+        max-width: 400px;
+    }
+}

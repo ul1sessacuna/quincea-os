@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los 15 de Valentina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="/imagenes/misquince.png" alt="" class="animated-logo"></div>
+    </header>
+    <main>
+        <div class="image-section">
+            <img src="imagenes/1.jpeg" alt="Foto de Valentina 1" class="fade-in">
+        </div>
+        
+        <div class="info fade-in">
+            <h2>Detalles del Evento</h2>
+            <p><i class="fas fa-calendar-alt"></i> <strong></strong> 11 de Abril de 2025</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong></strong> Club Adelante, Reconquista</p>
+            <p><i class="fas fa-clock"></i> <strong></strong> 21:00 hs</p>
+        </div>
+        
+        <div class="image-section">
+            <img src="imagenes/2.jpeg" alt="Foto de Valentina 2" class="fade-in">
+        </div>
+
+        <div class="countdown fade-in">
+            <h2>Cuenta regresiva</h2>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-days">0</div>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-hours">0</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-minutes">0</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-seconds">0</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-section">
+            <img src="imagenes/3.jpeg" alt="Foto de Valentina 3" class="fade-in">
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <p>¡Te esperamos para celebrar un día inolvidable!</p>
+    </footer>
+
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date("April 11, 2025 21:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown-days").textContent = days;
+            document.getElementById("countdown-hours").textContent = hours;
+            document.getElementById("countdown-minutes").textContent = minutes;
+            document.getElementById("countdown-seconds").textContent = seconds;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
