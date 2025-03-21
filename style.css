@@ -47,12 +47,73 @@ body {
 }
 .info, .countdown {
     margin: 30px auto;
-    padding: 20px;
-    max-width: 600px;
+    padding: 15px;
+    max-width: 400px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+.frase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+background-color: #fff;  
+  margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #7d3c98;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Pantalla de bienvenida */
+.welcome-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.btn-ingresar {
+    background-color: white;
+    color: #ff4081;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-ingresar:hover {
+    background-color: #ff4081;
+    color: white;
+}
+
+
 .info h2, .countdown h2 {
     color: #7d3c98;
 }
@@ -77,6 +138,34 @@ body {
     color: white;
     margin-top: 20px;
 }
+
+
+/* Reproductor de música */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ff4081;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.play-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.play-button:focus {
+    outline: none;
+}
 @media (max-width: 600px) {
     .countdown-timer {
         flex-direction: column;
@@ -92,4 +181,9 @@ body {
     .logo img {
         max-width: 400px;
     }
+}
+
+@media (max-width: 600px) {
+    .welcome-content h1 { font-size: 2rem; }
+    .btn-ingresar { font-size: 1rem; }
 }

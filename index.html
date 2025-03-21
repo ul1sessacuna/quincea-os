@@ -3,61 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis 15 Años</title>
+    <title>Los 15 de Valentina</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo"><img src="/imagenes/misquince.png" alt="" class="animated-logo"></div>
-    </header>
-    <main>
-        <div class="image-section">
-            <img src="imagenes/1.jpeg" alt="Foto de Valentina 1" class="fade-in">
+    <!-- Pantalla de Bienvenida -->
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-content">
+            <h1>Mis 15 Kayla</h1>
+            <p>QUIERO QUE SEAS PARTE DE ESTE<br> MOMENTO TAN IMPORTANTE PARA MÍ</p>
+            <button class="btn-ingresar" onclick="enterSite()">Ingresar</button>
         </div>
-        
-        <div class="info fade-in">
-            <h2>Detalles del Evento</h2>
-            <p><i class="fas fa-calendar-alt"></i> <strong></strong> 11 de Abril de 2025</p>
-            <p><i class="fas fa-map-marker-alt"></i> <strong></strong> Club Adelante, Reconquista</p>
-            <p><i class="fas fa-clock"></i> <strong></strong> 21:00 hs</p>
-        </div>
-        
-        <div class="image-section">
-            <img src="imagenes/2.jpeg" alt="Foto de Valentina 2" class="fade-in">
-        </div>
+    </div>
 
-        <div class="countdown fade-in">
-            <h2>Cuenta regresiva</h2>
-            <div class="countdown-timer">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="countdown-days">0</div>
-                    <div class="countdown-label">Días</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="countdown-hours">0</div>
-                    <div class="countdown-label">Horas</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="countdown-minutes">0</div>
-                    <div class="countdown-label">Minutos</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="countdown-seconds">0</div>
-                    <div class="countdown-label">Segundos</div>
+    <!-- Contenido Principal (Oculto al Inicio) -->
+    <div class="main-content" id="main-content" style="display: none;">
+        <header class="header">
+            <div class="logo">
+                <img src="imagenes/misquince.png" alt="Mis 15" class="logo-animated">
+            </div>
+        </header>
+
+        <main>
+            <div class="image-section">
+                <img src="imagenes/1.jpeg" alt="Foto de Valentina 1" class="fade-in">
+            </div>
+            
+            <div class="info fade-in">
+                <h2>Detalles del Evento</h2>
+                <p><i class="fas fa-calendar-alt"></i> 11 de Abril de 2025</p>
+                <p><i class="fas fa-map-marker-alt"></i> Club Adelante, Reconquista</p>
+                <p><i class="fas fa-clock"></i> 21:00 hs</p>
+            </div>
+            
+            <div class="image-section">
+                <img src="imagenes/2.jpeg" alt="Foto de Valentina 2" class="fade-in">
+            </div>
+
+            <div class="countdown fade-in">
+                <h2>Cuenta regresiva</h2>
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="countdown-days">0</div>
+                        <div class="countdown-label">Días</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="countdown-hours">0</div>
+                        <div class="countdown-label">Horas</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="countdown-minutes">0</div>
+                        <div class="countdown-label">Minutos</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="countdown-seconds">0</div>
+                        <div class="countdown-label">Segundos</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="image-section">
-            <img src="imagenes/3.jpeg" alt="Foto de Valentina 3" class="fade-in">
-        </div>
-    </main>
-    
-    <footer class="footer">
-        <p>¡Te esperamos para celebrar un día inolvidable!</p>
-    </footer>
+            <div class="frase"> 
+                  <p>HAY MOMENTOS QUE NO SE PUEDEN BORRAR, PERSONAS QUE NO SE PUEDEN
+                    OLVIDAR Y RECUERDOS COMO ESTOS QUE SIEMPRE VOY A ATESORAR.
+                  </p>
+            </div>
 
+            <div class="image-section">
+                <img src="imagenes/3.jpeg" alt="Foto de Valentina 3" class="fade-in">
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>¡Te esperamos para celebrar un día inolvidable!</p>
+        </footer>
+    </div>
+         <!-- Reproductor de Música -->
+    <div class="music-player" id="music-player">
+        <audio id="audio" loop>
+            <source src="/audio/miaudio.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <button class="play-button" onclick="toggleMusic()">
+            <i id="play-icon" class="fas fa-play"></i>
+        </button>
+    </div>
     <script>
         function updateCountdown() {
             const eventDate = new Date("April 11, 2025 21:00:00").getTime();
@@ -76,6 +106,35 @@
         }
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        function enterSite() {
+            document.getElementById("welcome-screen").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }
+
+
+        function enterSite() {
+            document.getElementById("welcome-screen").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+            document.getElementById("audio").play(); // Reproduce la música al entrar
+            document.getElementById("play-icon").classList.remove("fa-play");
+            document.getElementById("play-icon").classList.add("fa-pause");
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById("audio");
+            const playIcon = document.getElementById("play-icon");
+
+            if (audio.paused) {
+                audio.play();
+                playIcon.classList.remove("fa-play");
+                playIcon.classList.add("fa-pause");
+            } else {
+                audio.pause();
+                playIcon.classList.remove("fa-pause");
+                playIcon.classList.add("fa-play");
+            }
+        }
     </script>
 </body>
 </html>
