@@ -121,20 +121,28 @@
             document.getElementById("play-icon").classList.add("fa-pause");
         }
 
-        function toggleMusic() {
-            const audio = document.getElementById("audio");
-            const playIcon = document.getElementById("play-icon");
+           let audio = document.getElementById("audio");
+    let playIcon = document.getElementById("play-icon");
+    let isStarted = false; // Para asegurarnos de que solo se ajuste una vez
 
-            if (audio.paused) {
-                audio.play();
-                playIcon.classList.remove("fa-play");
-                playIcon.classList.add("fa-pause");
-            } else {
-                audio.pause();
-                playIcon.classList.remove("fa-pause");
-                playIcon.classList.add("fa-play");
+    function toggleMusic() {
+        if (audio.paused) {
+            if (!isStarted) {
+                audio.currentTime = 10; // Establece el tiempo de inicio en 10 segundos
+                isStarted = true; // Marca que ya se ha ajustado
             }
+            audio.play();
+            playIcon.classList.replace("fa-play", "fa-pause");
+        } else {
+            audio.pause();
+            playIcon.classList.replace("fa-pause", "fa-play");
         }
+    }
+
+    // Asegura que el tiempo se ajuste correctamente cuando el audio está listo
+    audio.addEventListener("loadedmetadata", () => {
+        audio.currentTime = 10;
+    });
     </script>
 </body>
 </html>
